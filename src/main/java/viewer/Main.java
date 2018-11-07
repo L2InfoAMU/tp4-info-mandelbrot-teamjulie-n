@@ -18,6 +18,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        System.out.println("Calcul en cours");
         launch(args);
     }
 }
