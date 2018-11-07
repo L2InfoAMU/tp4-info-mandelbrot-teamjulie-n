@@ -133,7 +133,7 @@ public class Complex {
      * @return <code>||this|| ** 2</code>
      */
     double squaredModulus() {
-        return real * real * imaginary * imaginary;
+        return real * real + imaginary * imaginary;
     }
 
     /**
@@ -152,10 +152,10 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        if (this.equals(ONE)){
+        double m = squaredModulus();
+        if (m == 0){
             throw new ArithmeticException("divide by zero");
         }
-        double m = squaredModulus();
         return new Complex(real / m, imaginary / m);
     }
 
@@ -207,7 +207,7 @@ public class Complex {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (o == null || getClass() != o.getClass())
+        if (o == null || this.getClass() != o.getClass())
             return false;
         Complex complex = (Complex) o;
         return Helpers.doubleCompare(complex.real, real) == 0 ||
@@ -223,7 +223,7 @@ public class Complex {
     @Override
     public String toString() {
         return "Complex{" +
-                "real=" + imaginary +
+                "real=" + real +
                 ", imaginary=" + imaginary +
                 '}';
     }
