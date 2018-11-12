@@ -135,6 +135,7 @@ public class Complex {
      */
     double squaredModulus() {
         return real * real + imaginary * imaginary;
+
     }
 
     /**
@@ -153,11 +154,20 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        double m = squaredModulus();
-        if (m == 0){
+
+        if (equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
-        return new Complex(real / m, imaginary / m);
+        double real2 = real;
+        double imaginary2 = imaginary;
+        if (real < 0){
+            real2 = real2*-1;
+        }
+        if (imaginary < 0){
+            imaginary2 = imaginary2*-1;
+        }
+        double m = squaredModulus();
+        return new Complex(real2 / m, imaginary2 / m);
     }
 
     /**
