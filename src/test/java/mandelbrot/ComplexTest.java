@@ -195,4 +195,11 @@ public class ComplexTest {
         assertEquals(new Complex(10.4,10.4),c1.scale(5.2));
         assertEquals(new Complex(0,0),c1.scale(0));
     }
+    @Test
+    void testReal(){
+        assertEquals(new Complex(4,0),oneMinusI.real(4));
+    }
+
+
+
 }
