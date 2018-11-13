@@ -72,7 +72,7 @@ public class Complex {
      * @return the complex <code>real + 0 i</code>
      */
     public static Complex real(double real) {
-        return new Complex(0, real);
+        return new Complex(real, 0);
     }
 
     /**
@@ -178,7 +178,7 @@ public class Complex {
      */
     Complex divide(Complex divisor) {
         double m = divisor.squaredModulus();
-        if (m == 0){
+        if (divisor.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
 
