@@ -145,7 +145,10 @@ public class Complex {
      * @return <code>||this||</code>
      */
     double modulus() {
-        return Math.sqrt(squaredModulus());
+        if (real != 0 || imaginary != 0)
+            return Math.sqrt(squaredModulus());
+        else
+            return  0;
     }
 
 

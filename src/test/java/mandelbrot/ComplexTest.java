@@ -200,6 +200,15 @@ public class ComplexTest {
         assertEquals(new Complex(4,0),oneMinusI.real(4));
     }
 
+    @Test
+    void testmodulus(){
+        Complex zero = new Complex(0,0);
+        Complex c1 = new Complex(2,2);
+        assertEquals(1,minusI.modulus());
+        assertEquals(0,zero.modulus());
+        assertEquals(2.8284271247461903,c1.modulus());
+    }
+
 
 
 }
