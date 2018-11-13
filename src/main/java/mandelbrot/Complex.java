@@ -183,8 +183,8 @@ public class Complex {
         }
         double m = divisor.squaredModulus();
         return new Complex(
-                (getReal() * divisor.getReal() + getImaginary() * divisor.getImaginary()) / m,
-                (getImaginary() * divisor.getReal() - getReal() * divisor.getImaginary()) / m
+                (this.real * divisor.real + imaginary * divisor.imaginary) / m,
+                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
         );
     }
 
