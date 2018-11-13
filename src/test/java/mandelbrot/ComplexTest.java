@@ -175,4 +175,16 @@ public class ComplexTest {
         Complex c2 = new Complex(5,4);
         assertEquals(new Complex(2,18),c1.multiply(c2));
     }
+
+    @Test
+    void testPow(){
+        Complex c1 = new Complex(2,2);
+        Complex c2 = new Complex(0,0);
+        assertEquals(new Complex(1,0),c1.pow(0));
+        assertEquals(new Complex(2,2),c1.pow(1));
+        assertEquals(new Complex(0,8),c1.pow(2));
+        assertEquals(new Complex(-16,16),c1.pow(3));
+        assertEquals(new Complex(-64,0),c1.pow(4));
+        assertEquals(new Complex(0,0),c2.pow(2));
+    }
 }
