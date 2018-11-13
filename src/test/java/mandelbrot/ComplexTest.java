@@ -143,5 +143,9 @@ public class ComplexTest {
         Complex c3 = new Complex(7, 7);
         Complex c4 = new Complex(7, 7);
         assertEquals(true, c3.equals(c4));
+
+        Complex c5 = new Complex(7, 7);
+        Complex c6 = new Complex(-7, -7);
+        assertEquals(false, c5.equals(c6));
     }
 }
