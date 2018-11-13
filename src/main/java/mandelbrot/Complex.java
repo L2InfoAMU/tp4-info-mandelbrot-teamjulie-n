@@ -177,11 +177,10 @@ public class Complex {
      * @return the complex number <code>this / divisor</code>
      */
     Complex divide(Complex divisor) {
-        double m = divisor.squaredModulus();
         if (divisor.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
-
+        double m = divisor.squaredModulus();
         return new Complex(
                 (getReal() * divisor.getReal() + getImaginary() * divisor.getImaginary()) / m,
                 (getImaginary() * divisor.getReal() - getReal() * divisor.getImaginary()) / m
