@@ -169,4 +169,10 @@ public class ComplexTest {
         Complex c4 = new Complex(2,2);
         assertEquals(new Complex(-2, -2), c3.add(c4));
     }
+    @Test
+    void testMultiply(){
+        Complex c1 = new Complex(2,2);
+        Complex c2 = new Complex(5,4);
+        assertEquals(new Complex(2,18),c1.multiply(c2));
+    }
 }
