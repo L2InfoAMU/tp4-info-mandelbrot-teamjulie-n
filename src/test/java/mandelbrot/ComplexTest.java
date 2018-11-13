@@ -98,10 +98,7 @@ public class ComplexTest {
     }
 
     @Test
-    void testDivideByZero(){
-
-        assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO));
-    }
+    void testDivideByZero(){ assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO)); }
 
     @Test
     void testConjugate(){
