@@ -178,13 +178,13 @@ public class Complex {
      */
     Complex divide(Complex divisor) {
         double m = divisor.squaredModulus();
-        if (m == 0){
+        if (divisor.equals(0)){
             throw new ArithmeticException("divide by zero");
         }
 
         return new Complex(
-                (this.real + divisor.real + this.imaginary + divisor.imaginary) / m,
-                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
+                (getReal() * divisor.getReal() + getImaginary() * divisor.getImaginary()) / m,
+                (getImaginary() * divisor.getReal() - getReal() * divisor.getImaginary()) / m
         );
     }
 
