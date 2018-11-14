@@ -11,6 +11,7 @@ import mandelbrot.Mandelbrot;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /**
@@ -35,16 +36,18 @@ public class Controller implements Initializable {
     /* positions of colors in the histogram */
     private double[] breakpoints = {0., 0.75, 0.85, 0.95, 0.99, 1.0};
     /* colors of the histogram */
-    private Color[] colors =
-            {Color.gray(0.2),
-                    Color.gray(0.7),
-                    Color.rgb(55, 118, 145),
-                    Color.rgb(63, 74, 132),
-                    Color.rgb(145, 121, 82),
-                    Color.rgb(250, 250, 200)
+    private static Color[] colors =
+            {
+                    Color.rgb(255, 255, 255),
+                    Color.rgb(10, 200, 200),
+                    Color.rgb(40, 120, 150),
+                    Color.rgb(175, 175, 35),
+                    Color.rgb(200, 200, 50),
+                    Color.rgb(250, 250, 0)
             };
     /* algorithm to generate the distribution of colors */
     private Histogram histogram = new Histogram(breakpoints, colors);
+
 
     /**
      * Method called when the graphical interface is loaded
@@ -156,5 +159,10 @@ public class Controller implements Initializable {
             }
         }
         return new Pixel(x, y, sampledSubPixels);
+    }
+
+
+    public static void setColor(int index, Color color) {
+        colors[index] = color;
     }
 }
